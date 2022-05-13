@@ -24,7 +24,7 @@ export default function App() {
 
   useEffect(() => {
    const fetchIt = async ()=>{
-    await fetch('/api/v2/everything?q=news&apiKey=3c314b1b9c194b3cab398716a3aa5367')
+    await fetch('/api/v2/everything?q=news&apiKey=7b59a25765394b278b65a1fd57040235')
       .then(res => res.json())
       .then(data => {
         setArticles(data.articles)

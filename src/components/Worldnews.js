@@ -7,7 +7,7 @@ export default function Worldnews() {
 
   useEffect(() => {
    const fetchIt = async ()=>{
-    await fetch('/api/v2/everything?q=world&apiKey=a85abafdd40249398d40a7794a9506a1')
+    await fetch('/api/v2/everything?q=world&apiKey=7b59a25765394b278b65a1fd57040235')
       .then(res => res.json())
       .then(data => {
         setArticles(data.articles)
