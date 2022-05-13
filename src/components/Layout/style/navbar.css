@@ -88,6 +88,7 @@
 
 .searchBar {
     margin-right: -25px;
+    opacity: 0.2;
     color: white;
     display: flex;
     border: none;
