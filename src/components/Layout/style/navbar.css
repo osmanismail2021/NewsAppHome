@@ -1,0 +1,169 @@
+.navbar{
+    display: flex;
+    margin: 50px 100px;
+    background-color: rgb(214, 12, 12);
+    height: 50px;
+    align-items: center;
+    color: rgb(4, 11, 17);
+    font-family: 'Nunito', sans-serif;
+    border-radius: 10px 50px;
+    justify-content: space-between;
+    border: solid gray 2px;
+    
+}
+
+.navbar_logo{
+    width: 150px;
+    height: 125px;
+    z-index: 1;
+    margin-left: 50px;
+    border-radius: 10px 30px;
+    border: solid gray 2px;
+
+}
+
+
+
+.navbar .itemsContainer .icon {
+    color: rgb(9, 9, 9);
+    font-size: 30px;
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+}
+
+.test {
+    padding: 5px;
+    display: flex;
+}
+
+
+.navbar .itemsContainer span{
+  
+    /* margin-left: 70px; */
+    /* margin-right: 5px; */
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    
+    
+    
+}
+
+.navbar .itemsContainer {
+    width: 60%;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+.navbar .itemsContainer span:hover{
+    font-weight: 500;
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 10px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.navbar .itemsContainer .icon:hover {
+    font-weight: 500;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+
+.searchBar {
+    margin-right: -20px;
+    color: white;
+    display: flex;
+    
+    
+}
+
+.searchGlass{
+    font-size: 26px;
+    color: black;
+}
+
+.inputSearch {
+    width: 280px;
+    height: 30px !important;
+    border: 2px solid gray;
+    border-radius: 10px 50px;
+    margin-right: -65px;
+    padding-left: 15px;
+}
+
+.hamburger {
+    width: 32px;
+    height: 25px;
+    color: rgb(150, 144, 144);
+    margin-right: -60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: red; */
+    cursor: pointer;
+    
+
+    /* border: solid 2px;
+    padding: 10px;
+    border-radius: 5px; */
+
+    
+}
+
+span.lines {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(238, 14, 14);
+    transform-origin: left;
+    transition: all 2s ease;
+    margin-left: 0px;
+    border-radius: 10px;
+    
+    
+}
+
+
+
+nav.active {
+
+background: rgb(33, 33, 188);
+
+color: white;
+
+
+}
+ 
+nav.active .hamburger .lines:first-child {
+    background-color: rgb(249, 246, 246);
+        transform: rotate(45deg);
+}
+
+nav.active .hamburger .lines:nth-child(2) {
+    opacity: 0;
+}
+
+nav.active .hamburger .lines:last-child {
+    background-color: white;
+    transform: rotate(-45deg);
+}
+
+    
+
+    

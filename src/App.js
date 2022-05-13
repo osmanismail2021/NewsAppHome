@@ -1,0 +1,65 @@
+import {  BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Navbar from "./components/Layout/Navbar";
+import Home from "./components/Home"
+import Footer from "./components/Layout/Footer";
+import './App.css';
+import Belgiumnews from "./components/Belgiumnews";
+import Worldnews from "./components/Worldnews";
+import Weathernews from "./components/Weathernews";
+import Sportnews from "./components/Sportnews";
+import Trafficnews from "./components/Trafficnews";
+import SearchPage from "./components/SearchPage";
+import { Database } from './components/context/index';
+import { React, useState, useEffect } from 'react';
+import Menu from "./components/Layout/Menu"
+
+
+
+
+export default function App() {
+  
+  const [articles, setArticles] = useState([])
+  const [menuOpen, setMenuOpen] = useState(false)
+
+
+  useEffect(() => {
+   const fetchIt = async ()=>{
+    await fetch('/api/v2/everything?q=news&apiKey=3c314b1b9c194b3cab398716a3aa5367')
+      .then(res => res.json())
+      .then(data => {
+        setArticles(data.articles)
+
+      })
+   }
+   
+
+   
+
+   fetchIt()
+  }, [])
+  return (
+    <Database.Provider value={articles}>
+      <Router>
+        
+          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/belgiumnews" element={<Belgiumnews />} />
+            <Route path="/worldnews" element={<Worldnews />} />
+            <Route path="/weathernews" element={<Weathernews />} />
+            <Route path="/sportnews" element={<Sportnews />} />
+            <Route path="/trafficnews" element={<Trafficnews />} />
+            <Route path="/searchpage" element={<SearchPage />} />
+
+          </Routes>
+          <Footer />
+
+      </Router>
+    </Database.Provider>
+
+
+  );
+}
+
+
