@@ -10,6 +10,7 @@ const SearchBar = ({keyword,keywordHandler}) => {
     
      placeholder={"search news"}
      onChange={(e) => keywordHandler(e.target.value)}
+     value={keyword}
     />
   );
 }

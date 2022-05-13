@@ -9,7 +9,7 @@ export default function Sportnews() {
 
   useEffect(() => {
    const fetchIt = async ()=>{
-    await fetch('/api/v2/everything?q=sports&apiKey=3c314b1b9c194b3cab398716a3aa5367')
+    await fetch('/api/v2/everything?q=sports&apiKey=a85abafdd40249398d40a7794a9506a1')
       .then(res => res.json())
       .then(data => {
         setArticles(data.articles)

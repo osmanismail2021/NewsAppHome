@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsCloudSun } from "react-icons/bs";
 import { GiBelgium } from "react-icons/gi";
 import { BiWorld } from "react-icons/bi";
@@ -9,10 +9,12 @@ import { GiTrafficLightsReadyToGo } from "react-icons/gi"
 import "./style/navbar.css"
 import SearchBar from '../SearchBar';
 import { useState } from 'react';
+
 import Menu from './Menu'
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
   const [keyword, setKeyword] = useState("")
+  const navigate=useNavigate()
 
   const keywordHandle = (data) => {
     setKeyword(data)
@@ -63,9 +65,15 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
       </div>  
       <SearchBar keyword={keyword} keywordHandler={keywordHandle}  /> 
       
-      <Link className='searchBar' to={`searchpage?q=${keyword}`}>
+      {/* <Link className='searchBar' to={`searchpage?q=${keyword}`}>
         <BiSearchAlt className='searchGlass' />
-      </Link>
+      </Link> */}
+      <button  onClick={()=>{
+          navigate(`searchpage?q=${keyword}`)
+          setKeyword("")
+      }} className='searchBar'>
+        <BiSearchAlt className='searchGlass' />
+      </button>
 
       <div className="hamburger" onClick={() =>setMenuOpen(!menuOpen)}>
             <span className="lines line1"></span>
